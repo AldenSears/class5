@@ -188,26 +188,31 @@ par(mfrow = c(2, 1))
 plot(1:12, mean_temps[1, ])
 plot(1:12, mean_temps[2, ])
 
-# Notice that the multi-panel figure has a lot of empty white space. This can be reduced by changing the inner margins within par using mar()
+# Notice that the multi-panel figure has a lot of empty white space. 
+# This can be reduced by changing the inner margins within par using mar()
 # The default settings for mar = c(5, 4, 4, 2) lines for sides c(bottom, left, top, right)
 par(mar=c(3, 2, 2, 1))
 plot(1:12, mean_temps[1, ])
 plot(1:12, mean_temps[2, ])
 
-# To restore the default settings in par, call par again and return the number of panels to 1 x 1 and the margins to c(5, 4, 4, 2)
+# To restore the default settings in par, call par again and return the number 
+# of panels to 1 x 1 and the margins to c(5, 4, 4, 2)
 par(mfrow = c(1, 1), mar=c(5, 4, 4, 2))
 plot(1:12, mean_temps[1, ])
+
+
 
 
 # What happens when we have an x axis that's not numeric?
 temp$summer <- ifelse(temp$month == 6 | temp$month == 7 | temp$month == 8,
                       "summer", "not_summer")
-temp$summer <- factor(temp$summer)
+temp$summer <- as.factor(temp$summer)
 
 plot(temp$temperature ~ temp$summer)
 
 
-# #3 TO DO: Play around with the margins to minimize the amount of white space in between panels but ensure the x-axis and y-axis labels are visible
+# #3 TO DO: Play around with the margins to minimize the amount of white space 
+# in between panels but ensure the x-axis and y-axis labels are visible
 
 
 
